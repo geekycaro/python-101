@@ -9,7 +9,7 @@ while pooped == "yes":
     days_i_poop[when_i_poop] = int(times_i_poop)
     pooped = input("Did you poop everyday? ") 
 
-days_i_poop[days] = int(poop)
+#days_i_poop[days] = int(poop)
 
 # Populate the amount of time the user poop as integer as VALUE
 
