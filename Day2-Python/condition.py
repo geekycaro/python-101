@@ -1,5 +1,5 @@
 # create an empty distionary call 'days_i_poop'
-
+days_i_poop = {}
 # Populate the 'days_i_poop' dictionary with each day of the week as KEY
 pooped = "yes"
 

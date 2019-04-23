@@ -17,7 +17,8 @@ ips = ["209.244.0.3", "64.6.64.6", "8.8.8.8", "9.9.9.9", "84.200.69.80",
 ####################################
 
 # Use a for loop to create a dictionary mapping the provider names to their IPs
-
+for provider in providers:
+    print(provider)
 
 # Use the dictionary to print Hurricane Electric's IP
 
