@@ -6,7 +6,16 @@ item_count = int(input("How many items do you have in your inventory? "))
 
 # Use `range` and `for` to loop over each number up to the inventory number
 for x in range(item_count):
-
+	name_item = input("What's the item? ")
+	price_item = int(input("How much does it cost? "))
+	inventory[name_item] = price_item 
+	print("________")
+	#print(inventory)
+for y,z in inventory.items():
+	print(y)
+	if z < 5:
+		print("This item is on sale! ")
+	print("--------")
     # Prompt the user for the name of an item in their inventory ("What's the item? ")
 
     
@@ -16,7 +25,7 @@ for x in range(item_count):
     # Put the item into the dictionary as the key, and associate it with its price
 
     # Creating separation between each new item prompt
-    print("--------")
+    #print("--------")
 
 # Use `items` to loop through the dictionary and print the info to the screen
 
@@ -28,5 +37,5 @@ for x in range(item_count):
 
         
     # Creating separation between each item
-    print("--------")
+    
 
