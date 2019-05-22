@@ -1,5 +1,5 @@
 # create an empty distionary call 'days_i_poop'
-
+days_i_poop = {}
 # Populate the 'days_i_poop' dictionary with each day of the week as KEY
 pooped = "yes"
 
@@ -9,7 +9,7 @@ while pooped == "yes":
     days_i_poop[when_i_poop] = int(times_i_poop)
     pooped = input("Did you poop everyday? ") 
 
-days_i_poop[days] = int(poop)
+#days_i_poop[days] = int(poop)
 
 # Populate the amount of time the user poop as integer as VALUE
 

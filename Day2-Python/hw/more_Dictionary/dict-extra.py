@@ -8,7 +8,7 @@ providers = ["Level3", "Verisign", "Google", "Quad9", "DNS.WATCH",
 ips = ["209.244.0.3", "64.6.64.6", "8.8.8.8", "9.9.9.9", "84.200.69.80",
        "8.26.56.26", "208.67.222.222", "199.85.126.10", "81.218.119.11",
        "195.46.39.39", "69.195.152.204", "208.76.50.50", "216.146.35.35",
-       "37.235.1.174", "198.101.242.72", "77.88.8.8", "91.239.100.100",
+       "37.235.1.174", "198.101.242.72", "77.88.8.8", "91.239.100.100", 
        "74.82.42.42", "109.69.8.51", "156.154.70.1", "1.1.1.1", "45.77.165.194"]
 
 
@@ -17,24 +17,48 @@ ips = ["209.244.0.3", "64.6.64.6", "8.8.8.8", "9.9.9.9", "84.200.69.80",
 ####################################
 
 # Use a for loop to create a dictionary mapping the provider names to their IPs
+#provider_mapping = dict(zip(providers,ips))
+#print(provider_mapping)
+#for p in provider_mapping.items():
+       #print(provider_mapping)
+provider_mapping = {}
+# print(len(providers))
+# print(len(ips))
+
+for prov in range(len(providers)):
+       # print(ips[prov])
+       # print(providers[prov])
+       provider_mapping[providers[prov]] = [ips[prov]]
+# print(provider_mapping)
+       
 
 
-# Use the dictionary to print Hurricane Electric's IP
-
+    
+# # Use the dictionary to print Hurricane Electric's IP
+# print(provider_mapping["Hurricane Electric"])
 
 ##################################
 ### Part 2 - List of Providers ###
 ##################################
 
-# Use a for loop to create a list of dictionaries with the associated information
+# Use a for loop to create a list of dictionaries with the associated information 
+nameprov = {}
+company = []
+
+for keys, values in provider_mapping.items():
+       nameprov = {}
+       nameprov["provider"] = keys
+       nameprov["ip"] = values
+       company.append(nameprov)
+#print(company) 
 
 
 # Use the list to print the total number of providers
+#print(len(providers))
 
-
-#############################################################
-### Part 3 (Bonus) - Adding Secondaries to the Dictionary ###
-#############################################################
+# #############################################################
+# ### Part 3 (Bonus) - Adding Secondaries to the Dictionary ###
+# #############################################################
 secondary_ips = [
     {"provider": "Level3", "ip": "209.244.0.4"},
     {"provider": "Verisign", "ip": "64.6.65.6"},
@@ -57,14 +81,36 @@ secondary_ips = [
     {"provider": "Cloudflare", "ip": "1.0.0.1"}
 ]
 
-# Use a for loop to update your dictionary from part 1 with the new IPs
+# # Use a for loop to update your dictionary from part 1 with the new IPs
+# print(len(secondary_ips))
+# for k, v  in secondary_ips:
+#        provider_mapping[k["provider"]]
+#        #provider_mapping[k["provider"]].append(k["ip"])
+      
+# #print(provider_mapping)
+# for love in range(len(secondary_ips)):
+#        provider_mapping[secondary_ips[love]["provider"]].append(secondary_ips[love]["ip"])
+       #print(secondary_ips[love]["ip"])
 
-    # set provider value in dictionary to array of IPs (new and old)
+#print(provider_mapping)
 
-# Use the dictionary to print Hurricane Electric's IPs
+#     # set provider value in dictionary to array of IPs (new and old)
 
-#######################################################
-### Part 4 (Bonus) - Adding Secondaries to the List ###
-#######################################################
+# # Use the dictionary to print Hurricane Electric's IPs
+#print(provider_mapping["Hurricane Electric"])
+# #######################################################
+# ### Part 4 (Bonus) - Adding Secondaries to the List ###
+# #######################################################
 
-# Use nested for loops to update the list from part 2 with a "secondary_server" key.
+# # Use nested for loops to update the list from part 2 with a "secondary_server" key.
+
+for lala in company:
+       for popo in secondary_ips:
+              if lala["provider"] == popo["provider"]:
+                     lala["secondary_server"] = popo["ip"]
+for chacha in company:
+       print(chacha)
+                     
+                    
+
+       
